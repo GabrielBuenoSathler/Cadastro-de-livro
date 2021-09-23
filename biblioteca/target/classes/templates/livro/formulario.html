@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cADASTRO DE LIVRO</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+</head>
+<body class="container">
+<h1 class="py-5">Thymeleaf Form handling Demo</h1>
+<form th:object="${requisicaoNovoLivro}" class="card-body" action="/livro/novo" method="POST">
+    <div class="form-group">
+        <label for="autor">Autor</label>
+        <input th:field="*{autor}"  class="form-control" placeholder="Autor"/>
+               
+    </div>
+    <div class="form-group">
+        <label for="titulo">Titulo</label>
+        <input th:field="*{titulo}" class="form-control" placeholder="TITUTLO DO LIVRO"/>
+             
+    </div>
+   
+    <input type="submit" class="btn btn-primary" value="Registrar livro">
+</form>
+      <tr th:each="Livro : ${Livro}">
+            
+            <td><a href="#" th:text="${livro.titulo}">Title ...</a></td>
+          
+        </tr>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+     <head>
+       <meta charset ="UTF-8"/>
+       
+    </head>
+    <body>
+      <table class="table table-striped table-bordered">
+    <tr>
+        <th>Titulo</th>
+        <th>Autor</th>
+        
+    </tr>
+    <tr th:if="${#lists.isEmpty(livros)}">
+        <td colspan="5">No Records found. Add some...!</td>
+    </tr>
+            <tr th:each="livro : ${livros}">
+        <td th:text="${livro.titulo}"></td>
+        <td th:text="${livro.autor}"></td>
+        
+    </tr>
+</table>
+</tr>
+        
+          
+        
+    </body>
+</html>
